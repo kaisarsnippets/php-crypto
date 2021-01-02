@@ -1,7 +1,7 @@
 <?php
 
 // Encrypt AES + Salt + HEX
-static function encrypt($str, $pwd){
+function encrypt($str, $pwd){
     $out = false;
     try {
     $pwd = sha1($pwd);
@@ -17,7 +17,7 @@ static function encrypt($str, $pwd){
 }
 
 // Decrypt AES + Salt + HEX
-static function decrypt($str, $pwd){
+function decrypt($str, $pwd){
     $out = false;
     try {
     $pwd = sha1($pwd);
