@@ -1,2 +1,2 @@
-# Encrypt
-[php] Encrypt AES + Salt + HEX
+# Crypto
+[php] AES + Salt + HEX encryption.
