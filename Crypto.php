@@ -1,6 +1,4 @@
 <?php
-namespace KC;
-
 Class Crypto {
     
     // Encrypt AES + Salt + HEX
