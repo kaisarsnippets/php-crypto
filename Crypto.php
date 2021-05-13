@@ -17,21 +17,23 @@ Class Crypto {
         return $out;
     }
     
-    // Decrypt AES + Salt + HEX
-    static function decrypt($str, $pwd){
+    // DECRYPT AES + SALT + HEX
+    public function decrypt($str, $pwd)
+    {
         $out = false;
         try {
         $pwd = sha1($pwd);
-        $str = hex2bin($str);
+       @$str = hex2bin($str);
         $cmp = explode(':', $str);
+        if (count($cmp) >= 3) {
         $iv  = $cmp[0];
         $slt = $cmp[1];
         $txt = $cmp[2];
         $pws = hash('sha256', $pwd.$slt);
         $mth = 'aes-256-cbc';
-        @$pwc = openssl_decrypt($txt, $mth, $pws, null, $iv);
+       @$pwc = openssl_decrypt($txt, $mth, $pws, null, $iv);
         $out = $pwc;
-        } catch (Exception $e) {}
+        }} catch (Exception $e) {}
         return $out;
     }
 }
