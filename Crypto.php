@@ -18,8 +18,7 @@ Class Crypto {
     }
     
     // DECRYPT AES + SALT + HEX
-    public function decrypt($str, $pwd)
-    {
+    public function decrypt($str, $pwd){
         $out = false;
         try {
         $pwd = sha1($pwd);
